@@ -1,0 +1,98 @@
+
+:root {
+	--base-size: 20px;
+	--large-size: 2.25rem;
+	--medium-size: 1.75rem;
+	--caption-size: .8rem;
+	--small-size: .6875rem;
+	--lineheight: 1.5;
+	--lineheight-large: 1.1;
+    --text-width: 768px;
+    --pad: 2rem;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+    font-family: "Recursive", serif;
+    font-optical-sizing: auto;
+    font-weight:300;
+    font-style: normal;
+    font-size: var(--base-size);
+    line-height: var(--lineheight);
+    font-variation-settings:
+      "slnt" 0,
+      "CASL" 0,
+      "CRSV" 0.5,
+      "MONO" 0;
+}
+
+
+article {
+    margin: calc(var(--pad)*5) 0;
+}
+
+h1, p {
+    margin: 0 auto;
+    max-width: var(--text-width);
+}
+
+h1 {
+    padding-bottom: calc(var(--pad)*3);
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc((100vw - var(--text-width)) / 2);
+
+    padding: calc(var(--pad)*2) 0;
+}
+figure img {
+    padding-bottom: calc(var(--pad)*.5);
+}
+figcaption {
+    font-size: var(--caption-size);
+    line-height: vaR(--lineheight)
+}
+
+
+.float_l{
+    float: left;
+    padding-right: var(--pad);
+    padding-left: calc((100vw - var(--text-width)) / 6);
+}
+.float_r {
+    float: right;
+    padding-right: calc((100vw - var(--text-width)) / 6);
+    padding-left: var(--pad);
+}
+
+@media screen and (max-width: 414px) {
+    :root {
+        --base-size: 18px;
+        --text-width: calc(100vw - var(--pad)*2);
+        --pad: 1.5rem;
+        --indent: var(--pad);
+    }
+
+ 
+    figure {
+        width: 100%;
+    }
+    .float_l{
+        float: none;
+        padding-left:  var(--pad);
+    }
+    .float_r {
+        float: none;
+        padding-right: var(--pad);
+        padding-left: var(--pad);
+    }
+        
+}
+
